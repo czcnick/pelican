@@ -442,6 +442,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	border-bottom: 1px solid #eee;
 	padding: 1.5em 0;
 }
+.entry-content h2 {color: #C74451;}
 article img {
   box-shadow: 10px 10px 5px #888888;
 }
