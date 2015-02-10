@@ -445,6 +445,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 .entry-content h2 {color: #C74451;}
 article img {
   box-shadow: 10px 10px 5px #888888;
+  max-width: 100%;
 }
 img.org-image {
   box-shadow: none;
