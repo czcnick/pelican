@@ -6,6 +6,7 @@
         <meta name="keywords" content="{% block keywords %}大象笔记, 个人wiki, 个人知识管理, 独立博客, markdown博客, 程序员博客{% endblock %}">
         <meta name="description" content="{% block description %}用笔记记录生活的一切，更是个人维基百科。用于知识沉淀、分享发现以及个人经验。用独立博客拯救那些挣扎于微信朋友圈、新浪微博、QQ空间、豆瓣、知乎的人类吧:){% endblock %}">
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
         {% endif %}
