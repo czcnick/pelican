@@ -93,6 +93,7 @@ li { margin-top: 0.5em;}
 .post-info {
   font-size: 90%;
   color: gray;
+  margin: 15px 0;
 }
 
 .post-info p{
