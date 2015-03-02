@@ -447,6 +447,9 @@ article img {
   box-shadow: 10px 10px 5px #888888;
   max-width: 100%;
 }
+#ds-recent-comments img {
+  box-shadow: none;
+}
 img.org-image {
   box-shadow: none;
 }
