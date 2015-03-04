@@ -17,12 +17,14 @@
       {{ article.content }}
     </div><!-- /.entry-content -->
 
-    {% include 'ad.html' %}
+    {% include 'google_ad.html' %}
 
     {% if DUOSHUO_SITENAME and SITEURL and article.status != "draft" %}
     <div class="comments">
       <h2>Comments !</h2>
-      {% include 'duoshuo_script.html' %}
+      {% include 'duoshuo_comments.html' %}
+      {% include 'baidu_ad.html' %}
+      {% include 'duoshuo_latest_comments.html' %}
     </div>
     {% endif %}
 
