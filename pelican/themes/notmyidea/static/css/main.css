@@ -114,8 +114,9 @@ pre {
   -webkit-border-radius: 5px;
   display: block;
   padding: 0.5em;
-  background: #001f3f;
-  color: hsla(210, 100%, 75%, 1.0);
+  background: #253238;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  color: #FFFFFF;
   margin-bottom: 1em;
   font-family: monospace, Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   overflow-x: auto;
