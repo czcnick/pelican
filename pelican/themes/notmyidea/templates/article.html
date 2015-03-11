@@ -17,8 +17,8 @@
       {{ article.content }}
     </div><!-- /.entry-content -->
 
-    <h2 class="tuijian">相关阅读</h2>
-    {% include 'baidu_yuansheng_ad.html' %}
+    {% include 'google_ad.html' %}
+    {% include 'baidu_ad.html' %}
 
     {% if DUOSHUO_SITENAME and SITEURL and article.status != "draft" %}
     <div class="comments">
@@ -28,7 +28,6 @@
     </div>
     {% endif %}
 
-    {% include 'google_ad.html' %}
 
   </article>
 </section>
