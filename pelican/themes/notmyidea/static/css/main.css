@@ -539,3 +539,41 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
   float: left;
   margin-right: 5px;
 }
+
+/* logo title animation */
+#logo-title {
+  -moz-animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  -moz-animation-name: slidein;
+  -webkit-animation-name: slidein;
+  -moz-animation-iteration-count: 3;
+  -webkit-animation-iteration-count: 3;
+  -moz-animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+}
+
+@-moz-keyframes slidein {
+  from {
+    margin-left:100%;
+  }
+
+  75% {
+    margin-left: 25%;
+  }
+
+  to {
+    margin-left:0%;
+  }
+}
+
+@-webkit-keyframes slidein {
+  from {
+    margin-left:100%;
+    width:300%
+  }
+
+  to {
+    margin-left:0%;
+    width:100%;
+  }
+}
