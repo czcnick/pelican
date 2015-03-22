@@ -1,0 +1,21 @@
+{
+  "name": "wiki",
+  "version": "1.0.0",
+  "description": "sunzhongwei.com front end",
+  "main": "gulpfile.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-rename": "^1.2.0",
+    "gulp-minify-css": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wiki"
+  ],
+  "author": "zhongwei",
+  "license": "ISC"
+}
