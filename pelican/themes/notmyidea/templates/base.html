@@ -1,81 +1,85 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
-        <meta charset="utf-8" />
-        <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
-        <meta name="keywords" content="{% block keywords %}大象笔记, 个人博客, 个人wiki, 个人知识管理, 独立博客, markdown博客, 程序员博客{% endblock %}">
-        <meta name="description" content="{% block description %}个人博客，用笔记记录生活的一切，更是个人维基百科。用于知识沉淀、分享发现以及个人经验。用独立博客拯救那些挣扎于微信朋友圈、新浪微博、QQ空间、豆瓣、知乎的人类吧:){% endblock %}">
-        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/build/css/main.min.css" />
-        <!-- 
-        <link rel="stylesheet" href="theme/build/css/main.min.css" />
-         -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% if FEED_ALL_ATOM %}
-        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
-        {% endif %}
-        {% if FEED_ALL_RSS %}
-        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
-        {% endif %}
+  <meta charset="utf-8" />
+  <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+  <meta name="keywords" content="{% block keywords %}大象笔记, 个人博客, 个人wiki, 个人知识管理, 独立博客, markdown博客, 程序员博客{% endblock %}">
+  <meta name="description" content="{% block description %}个人博客，用笔记记录生活的一切，更是个人维基百科。用于知识沉淀、分享发现以及个人经验。用独立博客拯救那些挣扎于微信朋友圈、新浪微博、QQ空间、豆瓣、知乎的人类吧:){% endblock %}">
+  <!-- 
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/build/css/main.min.css" />
+   -->
+  <link rel="stylesheet" href="theme/build/css/main.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if FEED_ALL_ATOM %}
+  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+  {% endif %}
+  {% if FEED_ALL_RSS %}
+  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+  {% endif %}
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+  <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 
 <body id="index" class="home">
-{% include 'github.html' %}
-        <header id="banner" class="body">
-                <h1 id="logo-title"><a href="{{ SITEURL }}/">{{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h1>
-                <nav><ul>
-                {% for title, link in MENUITEMS %}
-                    <li><a href="{{ link }}">{{ title }}</a></li>
-                {% endfor %}
-                {% if DISPLAY_PAGES_ON_MENU -%}
-                {% for pg in PAGES %}
-                    <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
-                {% endfor %}
-                {% endif %}
-                {% if DISPLAY_CATEGORIES_ON_MENU -%}
-                {% for cat, null in categories %}
-                    <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-                {% endfor %}
-                {% endif %}
-                </ul></nav>
-        </header><!-- /#banner -->
-        {% block content %}
-        {% endblock %}
-        <section id="extras" class="body">
-        <div class="tags">
-          <h2>Tags</h2>
-          <ul class="tagcloud">
-              {% for tag in tag_cloud %}
-                  <li class=""><a href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a></li>
-              {% endfor %}
-          </ul>
-        </div>
-        {% if LINKS %}
-                <div class="blogroll">
-                        <h2>Blogroll</h2>
-                        <ul>
-                        {% for name, link in LINKS %}
-                            <li><a href="{{ link }}">{{ name }}</a></li>
-                        {% endfor %}
-                        </ul>
-                </div><!-- /.blogroll -->
-        {% endif %}
-        </section><!-- /#extras -->
+  {% include 'github.html' %}
 
-        <footer id="contentinfo" class="body">
-          <address id="about" class="vcard body">
-            @大象笔记 
-            {% include 'china_icp_license.html' %}
-            Powered by <a href="/markdown-wiki-with-pelican.html">Pelican</a>
-          </address><!-- /#about -->
+  <header id="banner" class="body">
+    <h1 id="logo-title">
+      <a href="{{ SITEURL }}/">{{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a>
+    </h1>
+    <nav><ul>
+    {% for title, link in MENUITEMS %}
+        <li><a href="{{ link }}">{{ title }}</a></li>
+    {% endfor %}
+    {% if DISPLAY_PAGES_ON_MENU -%}
+    {% for pg in PAGES %}
+        <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
+    {% endfor %}
+    {% endif %}
+    {% if DISPLAY_CATEGORIES_ON_MENU -%}
+    {% for cat, null in categories %}
+        <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+    {% endfor %}
+    {% endif %}
+    </ul></nav>
+  </header><!-- /#banner -->
 
-        </footer><!-- /#contentinfo -->
+  {% block content %}{% endblock %}
 
-<script src="http://cdn.sunzhongwei.com/react-0.12.2.min.js"></script>
-<script src="http://cdn.sunzhongwei.com/back2top-0.3.0.js"></script>
-{% include 'analytics.html' %} 
+  <section id="extras" class="body">
+    <div class="tags">
+      <h2>Tags</h2>
+      <ul class="tagcloud">
+        {% for tag in tag_cloud %}
+          <li class=""><a href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% if LINKS %}
+      <div class="blogroll">
+        <h2>Blogroll</h2>
+        <ul>
+        {% for name, link in LINKS %}
+            <li><a href="{{ link }}">{{ name }}</a></li>
+        {% endfor %}
+        </ul>
+      </div><!-- /.blogroll -->
+    {% endif %}
+  </section><!-- /#extras -->
+
+  <footer id="contentinfo" class="body">
+    <address id="about" class="vcard body">
+      @大象笔记 
+      {% include 'china_icp_license.html' %}
+      Powered by <a href="/markdown-wiki-with-pelican.html">Pelican</a>
+    </address><!-- /#about -->
+  </footer><!-- /#contentinfo -->
+
+  <script src="http://cdn.sunzhongwei.com/react-0.12.2.min.js"></script>
+  <script src="http://cdn.sunzhongwei.com/back2top-0.3.0.js"></script>
+
+  {% include 'analytics.html' %} 
 </body>
 </html>
