@@ -1,6 +1,7 @@
 @mobileWidth: 800px;	// iphone6 1334*750
 @globalFontFamily: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 @titleFontFamily: 'Yanone Kaffeesatz', arial, KaiTi, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+@codeFontFamily: monospace, Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 
 body {
     background: #F5F4EF;
@@ -48,6 +49,11 @@ h1, h2, h3, h4, h5, h6 {
 h3, h4, h5, h6 { margin-top: .8em; }
 	
 hr { border: 2px solid #EEEEEE; }
+
+a {
+	 	text-decoration: none;
+		color: #38485a;
+}
 
 
 /* banner */
@@ -291,4 +297,45 @@ img {
     margin-left: 0%;
     transform: rotate(0deg);
   }
+}
+
+// --------------
+// blockquote
+// --------------
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+
+	:before {
+		color: #ccc;
+		content: open-quote;
+		font-size: 4em;
+		line-height: 0.1em;
+		margin-right: 0.25em;
+		vertical-align: -0.4em;
+	}
+
+	p {
+		display: inline;
+	}
+}
+
+// --------------
+// code block 
+// --------------
+pre {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  display: block;
+  padding: 0.5em;
+  background: #253238;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  color: #FFFFFF;
+  margin-bottom: 1em;
+  font-family: @codeFontFamily;
+  overflow-x: auto;
 }
