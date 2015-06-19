@@ -1,9 +1,12 @@
 var gulp = require('gulp'),
     rename = require('gulp-rename'),
-    minifyCSS = require('gulp-minify-css');
+    minifyCSS = require('gulp-minify-css'),
+	less = require('gulp-less');
 
 var paths = {
-	css: './src/css/*.css'
+	cssDir: './src/css',
+	css: './src/css/*.css',
+	less: './src/css/*.less'
 };
 
 gulp.task('minify-css', function() {
@@ -13,9 +16,15 @@ gulp.task('minify-css', function() {
     .pipe(gulp.dest('./build/css/'))
 });
 
-gulp.task('watch', function() {
-	gulp.watch(paths.css, ['minify-css']);
+gulp.task('less', function () {
+  return gulp.src(paths.less)
+    .pipe(less({}))
+	.pipe(gulp.dest(paths.cssDir));
 });
 
-gulp.task('default', ['minify-css', 'watch']);
+gulp.task('watch', function() {
+	gulp.watch(paths.less, ['less', 'minify-css']);
+});
+
+gulp.task('default', ['less', 'minify-css', 'watch']);
 
