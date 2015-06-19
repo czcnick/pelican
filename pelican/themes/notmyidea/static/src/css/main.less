@@ -6,7 +6,6 @@
 body {
     background: #F5F4EF;
     color: #000305;
-    font-size: 87.5%; /* Base font size: 14px */
     font-family: @globalFontFamily;
     line-height: 1.429;
     margin: 0;
@@ -18,8 +17,23 @@ body {
 	width: 100%;	
 
 	@media (min-width: @mobileWidth) {
-		max-width: @mobileWidth;
+		max-width: 1200px;
 		margin: 0 auto;		// 居中
+	}
+}
+
+
+#main {
+	@media (min-width: @mobileWidth) {
+		float: left;
+		width: 70%;
+		margin-right: 20px;
+	}
+}
+
+#sidebar {
+	@media (min-width: @mobileWidth) {
+		padding-top: 105px;
 	}
 }
 
@@ -244,14 +258,6 @@ img {
 #article-ad {
   margin-top: 25px;
 }
-
-#baidu-juxing-ad {
-  margin-right: 5px;
-  @media (min-width: @mobileWidth) {
-  	float: left;
-  }
-}
-
 
 /* logo title animation */
 #logo-title {

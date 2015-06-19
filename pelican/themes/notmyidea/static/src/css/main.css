@@ -1,8 +1,6 @@
 body {
   background: #F5F4EF;
   color: #000305;
-  font-size: 87.5%;
-  /* Base font size: 14px */
   font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   line-height: 1.429;
   margin: 0;
@@ -14,8 +12,20 @@ body {
 }
 @media (min-width: 800px) {
   .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+  }
+}
+@media (min-width: 800px) {
+  #main {
+    float: left;
+    width: 70%;
+    margin-right: 20px;
+  }
+}
+@media (min-width: 800px) {
+  #sidebar {
+    padding-top: 105px;
   }
 }
 /* HTML5 tags */
@@ -293,14 +303,6 @@ img {
 /* ad */
 #article-ad {
   margin-top: 25px;
-}
-#baidu-juxing-ad {
-  margin-right: 5px;
-}
-@media (min-width: 800px) {
-  #baidu-juxing-ad {
-    float: left;
-  }
 }
 /* logo title animation */
 #logo-title {
