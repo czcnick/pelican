@@ -72,10 +72,6 @@ h6 {
 hr {
   border: 2px solid #EEEEEE;
 }
-a {
-  text-decoration: none;
-  color: #38485a;
-}
 /* banner */
 #banner {
   margin: 0 auto;
@@ -181,6 +177,11 @@ img {
   float: right;
 }
 #featured h2 {
+  color: #C74451;
+  font-size: 1.714em;
+  margin-bottom: 0.333em;
+}
+.entry-content h2 {
   color: #C74451;
   font-size: 1.714em;
   margin-bottom: 0.333em;
@@ -408,4 +409,20 @@ table tr td,
 table tfoot tr td {
   display: table-cell;
   line-height: 1.125rem;
+}
+a:link,
+a:visited,
+a:active {
+  color: #778087;
+  text-decoration: none;
+  word-break: break-all;
+}
+a:hover {
+  color: #4d5256;
+  text-decoration: underline;
+}
+h1 a:link,
+h1 a:visited,
+h1 a:active {
+  color: #000000;
 }

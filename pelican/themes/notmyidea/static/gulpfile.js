@@ -9,7 +9,9 @@ var paths = {
 	less: './src/css/*.less'
 };
 
-gulp.task('minify-css', function() {
+// declare dependencies
+// http://stackoverflow.com/questions/22082641/gulp-watch-not-tasks-not-firing-in-order
+gulp.task('minify-css', ['less'], function() {
   return gulp.src(paths.css)
     .pipe(rename({suffix: '.min'}))
     .pipe(minifyCSS({keepBreaks:false}))
@@ -23,8 +25,8 @@ gulp.task('less', function () {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(paths.less, ['less', 'minify-css']);
+	gulp.watch(paths.less, ['minify-css']);
 });
 
-gulp.task('default', ['less', 'minify-css', 'watch']);
+gulp.task('default', ['minify-css', 'watch']);
 
