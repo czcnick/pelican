@@ -26,6 +26,8 @@ body {
 @media (min-width: 800px) {
   #sidebar {
     padding-top: 105px;
+    max-width: 350px;
+    float: left;
   }
 }
 /* HTML5 tags */
